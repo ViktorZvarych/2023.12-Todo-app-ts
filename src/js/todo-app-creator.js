@@ -1,4 +1,7 @@
 import TodoApp from './todo-app.js';
+import themeToggle from './theme-toggle.js';
+// initiate theme toggle
+themeToggle();
 // Form for adding new Todo articles
 const addTodoArticleForm = document.forms['addTodoArticle-form'];
 addTodoArticleForm.onsubmit = addNewTodoArticleFormHandler;
@@ -44,10 +47,8 @@ function deleteTodoArticleFormHandler(e) {
 }
 // Initialize todo articles list
 function initTodoArticlesList() {
-    console.log('START initTodoArticlesList');
     getTodoArticlesFromLS();
     const articleElements = document.body.querySelectorAll('.todoArticle');
-    console.log(articleElements);
     articleElements.forEach((article) => article.remove());
     todoArticlesUl.innerHTML = '';
     todoArticles.forEach((todoArticle) => {
@@ -66,16 +67,3 @@ function initTodoArticlesList() {
     });
 }
 initTodoArticlesList();
-// ------theme toggle----
-const themeToggleInput = document.getElementById('switchThemeInput');
-const themeToggleLabel = document.getElementById('switchThemeLabel');
-console.log(themeToggleInput.checked, themeToggleLabel.innerText);
-themeToggleInput.onclick = () => {
-    themeToggleLabel.innerText = !themeToggleInput.checked
-        ? 'Change to light theme'
-        : 'Change to dark theme';
-    const htmlElement = document.querySelector('html');
-    themeToggleInput.checked
-        ? htmlElement.setAttribute('data-bs-theme', 'light')
-        : htmlElement.setAttribute('data-bs-theme', 'dark');
-};

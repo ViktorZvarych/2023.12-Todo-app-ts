@@ -1,11 +1,13 @@
 {
+  "homepage": "https://ViktorZvarych.github.io/2023.12-Todo-app-ts",
   "name": "todo-app-okten-ts-12.2023",
   "version": "1.0.0",
   "description": "",
   "main": "todo-app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile-ts": "tsc src/js/todo-app.ts --watch"
+    "compile-ts": "tsc src/js/todo-app.ts --watch",
+    "deploy": "gh-pages -d doc"
   },
   "author": "",
   "license": "ISC",

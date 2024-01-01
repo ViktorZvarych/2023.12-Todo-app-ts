@@ -3,7 +3,7 @@
     "lib": ["es6", "dom", "es2016"],
     "target": "es2016",
     "module": "es6",
-    "outDir": "src/js",
+    "outDir": "../doc/js",
     "rootDir": "src/ts"
   }
 }

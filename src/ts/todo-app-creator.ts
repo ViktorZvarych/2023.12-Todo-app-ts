@@ -35,7 +35,7 @@ function addNewTodoArticleFormHandler(e: Event): void {
     const todoAppName: string = todoInput.value
       .split(' ')
       .map((word) => word.trim())
-      .join('');
+      .join('_');
 
     if (todoArticles.indexOf(todoAppName) !== -1) {
       return alert('Choose another Todo list title');

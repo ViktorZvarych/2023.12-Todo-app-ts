@@ -22,7 +22,7 @@ function addNewTodoArticleFormHandler(e) {
         const todoAppName = todoInput.value
             .split(' ')
             .map((word) => word.trim())
-            .join('');
+            .join('_');
         if (todoArticles.indexOf(todoAppName) !== -1) {
             return alert('Choose another Todo list title');
         }

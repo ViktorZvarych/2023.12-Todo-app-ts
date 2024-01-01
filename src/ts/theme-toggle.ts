@@ -19,6 +19,6 @@ const themeToggle = () => {
       ? htmlElement.setAttribute('data-bs-theme', 'light')
       : htmlElement.setAttribute('data-bs-theme', 'dark');
   };
-};
+}; 
 
 export default themeToggle;

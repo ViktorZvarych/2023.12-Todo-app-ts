@@ -4,8 +4,8 @@ const themeToggle = () => {
     const themeToggleLabel = document.getElementById('switchThemeLabel');
     themeToggleInput.onclick = () => {
         themeToggleLabel.innerText = !themeToggleInput.checked
-            ? 'Change to light theme'
-            : 'Change to dark theme';
+            ? 'Turn ON the lights'
+            : 'Turn OFF the lights';
         const htmlElement = document.querySelector('html');
         themeToggleInput.checked
             ? htmlElement.setAttribute('data-bs-theme', 'light')

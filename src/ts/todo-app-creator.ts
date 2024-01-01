@@ -1,5 +1,5 @@
-import TodoApp from './todo-app';
-import themeToggle from './theme-toggle'
+import TodoApp from './todo-app.js';
+import themeToggle from './theme-toggle.js'
 
 // initiate theme toggle
 themeToggle();

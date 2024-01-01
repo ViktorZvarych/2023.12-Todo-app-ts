@@ -1,7 +1,7 @@
 {
   "homepage": "https://ViktorZvarych.github.io/2023.12-Todo-app-ts",
   "name": "todo-app-okten-ts-12.2023",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "todo-app.js",
   "scripts": {

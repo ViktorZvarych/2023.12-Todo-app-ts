@@ -48,13 +48,12 @@ export default class TodoApp {
         todoInput.setAttribute('name', 'addTodo-input');
         todoInput.setAttribute('placeholder', 'Task');
         todoInput.required = true;
+        todoLabel.appendChild(todoInput);
         const todoAddTaskButton = document.createElement('button');
-        todoAddTaskButton.classList.add('btn', 'btn-primary', 'm-2');
-        todoAddTaskButton.style.width = '190px';
+        todoAddTaskButton.classList.add('btn', 'btn-primary', 'm-2', 'todoAddTaskButton');
         todoAddTaskButton.type = 'submit';
         todoAddTaskButton.innerText = 'Add new task';
-        todoLabel.append(todoInput, todoAddTaskButton);
-        todoForm.appendChild(todoLabel);
+        todoForm.append(todoLabel, todoAddTaskButton);
         const todoDiv = document.createElement('div');
         const todoH3 = document.createElement('h3');
         todoH3.classList.add('card-header');
@@ -120,7 +119,6 @@ export default class TodoApp {
             const todoItemContainer = document.createElement('div');
             todoItemContainer.classList.add('todoItem-container');
             const todoP = document.createElement('p');
-            todoP.setAttribute('todoP-id', `${id}`);
             todoP.innerText = `${title}`;
             const todoAddDateP = document.createElement('p');
             todoAddDateP.innerText = `${addDate}`;

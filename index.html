@@ -36,7 +36,10 @@
               role="switch"
               id="switchThemeInput"
             />
-            <label class="form-check-label" for="switchThemeInput" id="switchThemeLabel"
+            <label
+              class="form-check-label"
+              for="switchThemeInput"
+              id="switchThemeLabel"
               >Turn ON the lights</label
             >
           </div>
@@ -74,10 +77,14 @@
                       placeholder="New Todo list title"
                       required
                     />
-                    <button type="submit" class="btn btn-primary col-auto" data-bs-dismiss="modal">
-                      Add new Todo list
-                    </button>
                   </label>
+                  <button
+                    type="submit"
+                    class="btn btn-primary col-auto"
+                    data-bs-dismiss="modal"
+                  >
+                    Add new Todo list
+                  </button>
                 </form>
               </div>
 
@@ -96,13 +103,21 @@
       </div>
 
       <div class="todo-articles-list mb-4">
-        <h2>Your Todo lists:</h2>
-        <ul id="todo-articles"></ul>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Your Todo lists:</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="todo-articles"></tbody>
+        </table>
       </div>
 
       <section id="articles-section" class="articles-section"></section>
     </div>
 
-    <script type="module" src="./js/todo-app-creator.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

@@ -57,3 +57,7 @@ li {
 .todoArticle {
   width: 30rem;
 }
+
+.todoAddTaskButton {
+  width: 190px;
+}

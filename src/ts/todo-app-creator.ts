@@ -11,6 +11,19 @@ const TodoAppCreator = () => {
   ] as HTMLFormElement;
   addTodoArticleForm.onsubmit = addNewTodoArticleFormHandler;
 
+  const addTodoArticleInput = document.getElementById('addTodoArticle-input') as HTMLInputElement;
+  addTodoArticleInput.oninput = addTodoArticleOnInputHandler;
+
+  const addTodoArticleButton = document.getElementById(
+    'addTodoArticle-button'
+  ) as HTMLButtonElement;
+
+  function addTodoArticleOnInputHandler(): void {
+    this.value
+      ? addTodoArticleButton.setAttribute('data-bs-dismiss', "modal")
+      : addTodoArticleButton.removeAttribute('data-bs-dismiss');
+    }
+
   const todoArticlesTBody = document.getElementById(
     'todo-articles'
   ) as HTMLUListElement;
@@ -157,12 +170,8 @@ const TodoAppCreator = () => {
         }
 
         localStorage.setItem('todo-articles', JSON.stringify(todoArticles));
-        getTodoArticlesFromLS();
-
-        console.log(todoArticle.shown);
 
         todoList.style.display = todoArticle.shown ? 'block' : 'none';
-        console.log(todoList);
       };
 
       todoArticleTd3Div.append(todoArticleTd3Input, todoArticleTd3Label);
@@ -176,13 +185,14 @@ const TodoAppCreator = () => {
       new TodoApp(todoArticle.title);
 
       // check if DOM has to display todo list
-      todoArticleTd3Input.checked = todoArticle.shown ? true : false;      
+      todoArticleTd3Input.checked = todoArticle.shown ? true : false;
       todoArticleTd3Label.innerHTML = todoArticle.shown ? 'Hide' : 'Show';
 
       //set display style for todo list article
       const todoList = document.getElementById(
         'article-' + todoArticle.title
       ) as HTMLElement;
+
       todoList.style.display = todoArticle.shown ? 'block' : 'none';
     });
   }

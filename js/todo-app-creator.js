@@ -3,6 +3,14 @@ const TodoAppCreator = () => {
     // Form for adding new Todo articles
     const addTodoArticleForm = document.forms['addTodoArticle-form'];
     addTodoArticleForm.onsubmit = addNewTodoArticleFormHandler;
+    const addTodoArticleInput = document.getElementById('addTodoArticle-input');
+    addTodoArticleInput.oninput = addTodoArticleOnInputHandler;
+    const addTodoArticleButton = document.getElementById('addTodoArticle-button');
+    function addTodoArticleOnInputHandler() {
+        this.value
+            ? addTodoArticleButton.setAttribute('data-bs-dismiss', "modal")
+            : addTodoArticleButton.removeAttribute('data-bs-dismiss');
+    }
     const todoArticlesTBody = document.getElementById('todo-articles');
     let todoArticles;
     // Get or init list of Todo Articles
@@ -88,10 +96,7 @@ const TodoAppCreator = () => {
                     }
                 }
                 localStorage.setItem('todo-articles', JSON.stringify(todoArticles));
-                getTodoArticlesFromLS();
-                console.log(todoArticle.shown);
                 todoList.style.display = todoArticle.shown ? 'block' : 'none';
-                console.log(todoList);
             };
             todoArticleTd3Div.append(todoArticleTd3Input, todoArticleTd3Label);
             todoArticleTd3.appendChild(todoArticleTd3Div);
